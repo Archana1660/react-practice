@@ -1,0 +1,59 @@
+//Functional Component
+
+class CampSite extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <Camper/>
+      </div>
+    );
+  }
+};
+const Camper = (props) => {
+  return <p>{props.name}</p>
+}
+Camper.defaultProps = {
+  name: 'CamperBot',
+}
+
+Camper.propTypes = {
+  name:PropTypes.string.isRequired
+}
+
+
+//Class Component
+
+class CampSite extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <Camper name={"Apple"}/>
+      </div>
+    );
+  }
+};
+
+class Camper extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    return(
+      <p>{this.props.name}</p>
+    )
+  }
+};
+
+Camper.defaultProps = {
+  name: "CamperBot"
+};
+
+Camper.propTypes = {
+  name:PropTypes.string.isRequired
+};
